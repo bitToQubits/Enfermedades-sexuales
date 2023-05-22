@@ -6,7 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enfermedades Sexuales</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background-color: #f1f8e9;
     }
@@ -66,10 +74,20 @@
       margin-top: 2em;
     }
 
-    hr {
+    hr.hero {
       width: 30%;
       float: left;
       border: 1px solid #C9E1C1;
+    }
+
+    hr {
+      width: 20%;
+      border: 1px solid black;
+    }
+
+    hr.prevencion {
+      width: 20%;
+      border: 1px solid #cd0061;
     }
 
     .col-md-6:not(:first-child),
@@ -82,6 +100,46 @@
     .card {
       border-radius: 0%;
     }
+
+    #dos-columnas {
+      -moz-column-count: 2;
+      -moz-column-gap: 20px;
+      -webkit-column-count: 2;
+      -webkit-column-gap: 20px;
+      column-count: 2;
+      column-gap: 20px;
+    }
+
+    .center {
+      display: flex;
+      align-items: center;
+      /* align children vertically */
+      justify-content: center;
+      /* align children horizontally */
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    a:hover {
+      text-decoration: none;
+      color: white;
+    }
+
+    h6 {
+      position: absolute;
+      top: -26px;
+    }
+
+    .text-rosado {
+      color: #cd0061;
+    }
+
+    #audioLink {
+      color: #388e3c;
+    }
   </style>
 </head>
 
@@ -90,29 +148,36 @@
     <div class="row mb-3 hero">
       <div class="col-md-6 text-left p-5">
         <h1 class="titulo">Enfermedades Sexuales</h1>
-        <hr>
-        <p class="subtitulo">Un termino que se refiere a toda infección que se transmite principalmente a través de
+        <hr class="hero">
+        <p class="subtitulo">Un término que se refiere a toda infección que se transmite principalmente a través de
           actividades sexuales. Es fundamental comprender qué son y cuáles existen para así protegernos.</p>
-        <a type="button" href="#tipos" class="btn btn-light continue">Seguir aprendiendo</a>
+        <a type="button" href="https://www.youtube.com/watch?v=1gbF4MjoOPE" class="btn btn-light continue"
+          target="_blank">Video: Introducción a las ETS</a>
       </div>
+
       <div class="col-md-6 principal-image">
+        <h6>Menú</h6>
         <div class="card-header ml-3">
-          <h2 class="card-title">Gonorrea</h2>
+          <h2 class="card-title"><a href="#gonorrea">Gonorrea</a></h2>
         </div>
         <div class="card-header">
-          <h2 class="card-title">Sífilis</h2>
+          <h2 class="card-title"><a href="#sifilis">Sífilis</a></h2>
         </div>
         <div class="card-header">
-          <h2 class="card-title">VIH/SIDA</h2>
+          <h2 class="card-title"><a href="#vih">VIH/SIDA</a></h2>
         </div>
         <div class="card-header">
-          <h2 class="card-title">Herpes Genital</h2>
+          <h2 class="card-title"><a href="#herpes">Herpes Genital</a></h2>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-12 p-5 text-center">
+        <h1 class="text-dark">Tipos de enfermedades sexuales</h1>
+        <hr>
+      </div>
+      <div class="col-md-6" id="gonorrea">
         <img src="assets/dolor_orinar.jpg" class="img-fluid">
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 center">
         <div class="p-5">
           <h1 class="display-5">La Gonorrea</h1>
           <p class="card-text">Es una infección bacteriana de transmisión sexual que afecta principalmente
@@ -120,24 +185,52 @@
             los genitales, el recto y la garganta. Se puede transmitir a través del contacto sexual sin protección con
             una persona infectada. Los síntomas pueden incluir dolor al orinar, secreción anormal y dolor abdominal.
           </p>
+          <a href="#" id="audioLink">
+            <i class="fa fa-play"></i>
+            Escucha la historia
+            de El Campesino.
+          </a>
+          <audio id="audioPlayer" src="assets/cibaeno.aac"></audio>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6" id="sifilis">
         <div class="p-5">
           <h1 class="display-5">La Sífilis</h1>
           <p class="card-text">Es una infección bacteriana causada por la bacteria Treponema pallidum. Se
-            transmite principalmente por contacto sexual sin protección con una persona infectada. Los síntomas pueden
-            incluir úlceras genitales, erupciones cutáneas y fiebre. Si no se trata, la sífilis puede causar problemas
+            transmite principalmente por contacto sexual sin protección con una persona infectada. La población de más
+            alto riesgo son los adultos jóvenes con edades que van desde los 20 hasta los 35 años. Si no se trata, la
+            sífilis puede causar problemas
             graves a largo plazo.</p>
+          <p></p>
+          <h5>Síntomas</h5>
+          <ol>
+            <li>La sífilis se desarrolla en etapas y los síntomas pueden variar en cada una de ellas.</li>
+            <li>La primera etapa se caracteriza por la aparición de llagas indoloras en los genitales, el recto o la
+              boca.</li>
+            <li>Una vez que se cura la llaga inicial, la segunda etapa se caracteriza por la aparición de un sarpullido.
+            </li>
+            <li>Luego, no se presentan síntomas hasta la última etapa, que puede ocurrir años después. La etapa final
+              puede provocar daños en el cerebro, los nervios, los ojos o el corazón.</li>
+          </ol>
+          <h5>
+            Prevención
+          </h5>
+          <ol>
+            <li>Evitando tener sexo (oral, anal, vaginal)</li>
+            <li>Tener una relación mutuamente monógama a largo plazo con una persona que se haya hecho pruebas y haya
+              tenido resultados negativos para las ETS.
+            </li>
+            <li>Usar condones de látex de manera correcta cada vez que tenga relaciones sexuales. </li>
+          </ol>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 center">
         <img src="assets/SÍFILIS.webp" class="img-fluid" alt="">
       </div>
       <div class="col-md-4">
         <img src="assets/ganglios.jpg" class="img-fluid" alt="">
       </div>
-      <div class="col-md-8">
+      <div class="col-md-8 center" id="vih">
         <div class="p-5">
           <h1 class="display-5">El VIH (Virus de Inmunodeficiencia Humana)</h1>
           <p class="card-text">Es un virus que ataca el sistema
@@ -149,7 +242,7 @@
             embarazo, el parto o la lactancia.</p>
         </div>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-8" id="herpes">
         <div class="p-5">
           <h1 class="display-5">El herpes genital</h1>
           <p class="card-text">Es una enfermedad de transmisión sexual causada por el virus del
@@ -162,9 +255,53 @@
       <div class="col-md-4">
         <img src="assets/herpes-2.webp" class="img-fluid">
       </div>
+      <div class="col-md-12 p-5 text-center pb-5">
+        <h1 class="text-rosado">Prevención a las enfermedades sexuales</h1>
+        <hr class="prevencion">
+        <img src="assets/prevencion.png">
+      </div>
     </div>
+  </div>
+  <div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <p class="col-md-4 mb-0 text-body-secondary">&copy; 2023 Jorge Luis Báez. <br>Portal web creado para Biología.
+        Maestra: Paola Cespedes.</p>
+
+
+
+      <a href="/"
+        class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="text-success" class="bi bi-virus2"
+          viewBox="0 0 16 16">
+
+          <path
+            d="M8 0a1 1 0 0 0-1 1v1.143c0 .557-.407 1.025-.921 1.24-.514.214-1.12.162-1.513-.231l-.809-.809a1 1 0 1 0-1.414 1.414l.809.809c.394.394.445.999.23 1.513C3.169 6.593 2.7 7 2.144 7H1a1 1 0 0 0 0 2h1.143c.557 0 1.025.407 1.24.921.214.514.163 1.12-.231 1.513l-.809.809a1 1 0 0 0 1.414 1.414l.809-.809c.394-.394.999-.445 1.513-.23.514.214.921.682.921 1.24V15a1 1 0 1 0 2 0v-1.143c0-.557.407-1.025.921-1.24.514-.214 1.12-.162 1.513.231l.809.809a1 1 0 0 0 1.414-1.414l-.809-.809c-.393-.394-.445-.999-.23-1.513.214-.514.682-.921 1.24-.921H15a1 1 0 1 0 0-2h-1.143c-.557 0-1.025-.407-1.24-.921-.214-.514-.162-1.12.231-1.513l.809-.809a1 1 0 0 0-1.414-1.414l-.809.809c-.394.393-.999.445-1.513.23-.514-.214-.92-.682-.92-1.24V1a1 1 0 0 0-1-1Zm2 5a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM7 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm1 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm4-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" />
+        </svg>
+      </a>
+
+      <ul class="nav col-md-4 justify-content-end mt-3">
+        <li class="nav-item"><a href="#" class="nav-link text-success">Subir al principio ↑</a></li>
+      </ul>
+    </footer>
   </div>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+<script>
+  var audioLink = document.getElementById("audioLink");
+  var audioPlayer = document.getElementById("audioPlayer");
+
+  audioLink.addEventListener("click", function (event) {
+    event.preventDefault();
+    if (audioPlayer.paused) {
+      audioPlayer.play();
+      audioLink.innerHTML = '<i class="fa fa-pause"></i> Pausar audio';
+    } else {
+      audioPlayer.pause();
+      audioLink.innerHTML = '<i class="fa fa-play"></i> Reproducir audio';
+    }
+  });
+
+
+</script>
 
 </html>
