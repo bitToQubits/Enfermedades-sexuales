@@ -137,8 +137,18 @@
       color: #cd0061;
     }
 
-    #audioLink {
+    .audioLink {
       color: #388e3c;
+    }
+
+    .audioLink:hover {
+      color: #388e3c;
+    }
+
+    .autorretrato {
+      border-radius: 20%;
+      height: 215px;
+      object-fit: cover;
     }
   </style>
 </head>
@@ -185,12 +195,11 @@
             los genitales, el recto y la garganta. Se puede transmitir a través del contacto sexual sin protección con
             una persona infectada. Los síntomas pueden incluir dolor al orinar, secreción anormal y dolor abdominal.
           </p>
-          <a href="#" id="audioLink">
+          <a href="#" class="audioLink">
             <i class="fa fa-play"></i>
-            Escucha la historia
-            de El Campesino.
+            Audio: Aprende sobre la gonorrea asintomática y prevención.
           </a>
-          <audio id="audioPlayer" src="assets/cibaeno.aac"></audio>
+          <audio class="audioPlayer" src="assets/gonorrea.aac"></audio>
         </div>
       </div>
       <div class="col-md-6" id="sifilis">
@@ -240,6 +249,11 @@
             del
             contacto sexual sin protección, el uso compartido de agujas infectadas o de madre a hijo durante el
             embarazo, el parto o la lactancia.</p>
+          <a href="#" class="audioLink">
+            <i class="fa fa-play"></i>
+            Audio: Aprende sobre los síntomas del VIH, qué es el SIDA, y tratamientos.
+          </a>
+          <audio class="audioPlayer" src="assets/vih.aac"></audio>
         </div>
       </div>
       <div class="col-md-8" id="herpes">
@@ -249,7 +263,13 @@
             herpes
             simple (VHS). Se caracteriza por la aparición de ampollas o úlceras dolorosas en los genitales, el recto o
             la boca. El herpes genital es altamente contagioso y puede transmitirse durante el contacto sexual sin
-            protección, incluso cuando no hay síntomas visibles.</p>
+            protección, incluso cuando no hay síntomas visibles.
+          </p>
+          <a href="#" class="audioLink">
+            <i class="fa fa-play"></i>
+            Audio: Escucha sobre la Transmisión, y Síntomas del Herpes.
+          </a>
+          <audio class="audioPlayer" src="assets/herpes.aac"></audio>
         </div>
       </div>
       <div class="col-md-4">
@@ -258,19 +278,22 @@
       <div class="col-md-12 p-5 text-center pb-5">
         <h1 class="text-rosado">Prevención a las enfermedades sexuales</h1>
         <hr class="prevencion">
-        <img src="assets/prevencion.png">
+        <img src="assets/prevencion.png" class="img-fluid">
       </div>
     </div>
   </div>
   <div class="container">
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-      <p class="col-md-4 mb-0 text-body-secondary">&copy; 2023 Jorge Luis Báez. <br>Portal web creado para Biología.
+      <p class="col-md-4 col-sm-6 col-xs-6 mb-0 text-body-secondary">&copy; 2023 Jorge Luis Báez. <br>Portal web creado
+        para
+        Biología.
         Maestra: Paola Cespedes.</p>
+      <img src="assets/jorge.jpeg" class="img-fluid autorretrato col-md-2 col-xs-6 col-sm-6">
 
 
 
       <a href="/"
-        class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        class="col-md-2 mt-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="text-success" class="bi bi-virus2"
           viewBox="0 0 16 16">
 
@@ -287,19 +310,32 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 <script>
-  var audioLink = document.getElementById("audioLink");
-  var audioPlayer = document.getElementById("audioPlayer");
+  const audioLink = document.getElementsByClassName("audioLink");
+  console.log(audioLink)
+  const audioPlayer = document.getElementsByClassName("audioPlayer");
 
-  audioLink.addEventListener("click", function (event) {
-    event.preventDefault();
-    if (audioPlayer.paused) {
-      audioPlayer.play();
-      audioLink.innerHTML = '<i class="fa fa-pause"></i> Pausar audio';
-    } else {
-      audioPlayer.pause();
-      audioLink.innerHTML = '<i class="fa fa-play"></i> Reproducir audio';
-    }
-  });
+  for (let i = 0; i < audioLink.length; i++) {
+    audioLink[i].addEventListener("click", function (event) {
+      event.preventDefault();
+      if (audioPlayer[i].paused) {
+        audioPlayer[i].play();
+        console.log(i, audioPlayer[i]);
+        audioLink[i].innerHTML = '<i class="fa fa-pause"></i> Pausar audio';
+      } else {
+        audioPlayer[i].pause();
+        if (i == 0) {
+          audioLink[i].innerHTML = '<i class="fa fa-play"></i> Audio: Aprende sobre la gonorrea asintomática y prevención.';
+        }
+        if (i == 1) {
+          audioLink[i].innerHTML = '<i class="fa fa-play"></i> Audio: Aprende sobre los síntomas del VIH, qué es el SIDA, y tratamientos.';
+        }
+        if (i == 2) {
+          audioLink[i].innerHTML = '<i class="fa fa-play"></i> Audio: Escucha sobre la Transmisión, y Síntomas del Herpes.';
+        }
+        console.log(i, audioPlayer[i]);
+      }
+    });
+  }
 
 
 </script>
